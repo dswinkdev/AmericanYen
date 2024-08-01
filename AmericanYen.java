@@ -1,13 +1,14 @@
 import java.util.Scanner;
-import java.text.DecimalFormat;
 
 public class AmericanYen {
 
-    public static void space(){
+    // spacer
+    public static void spacer() {
         System.out.println();
     }
 
-    public static void AmericanYen(){
+    // intro method
+    public static void americanYenIntro() {
         System.out.println("---------$--------");
         System.out.println("🇺🇸 American Yen 🇯🇵");
         System.out.println("---------$--------");
@@ -18,29 +19,33 @@ public class AmericanYen {
 
         Scanner scan = new Scanner(System.in);
 
-        DecimalFormat df = new DecimalFormat("#.00");
-
+        // declarations
         double usdAmount = 0.0;
         double yen = 149.02;
 
-        AmericanYen();
-        space();
+        // intro
+        americanYenIntro();
+        spacer();
 
+        // usdAmount while loop
         while (!(usdAmount == -1)) {
             System.out.print("Press -1 to quit.");
-            System.out.print("\nEnter US dollar amount for Japanese Yen conversion: $");
+            System.out.print("\nEnter US dollar amount for Yen conversion: $");
             usdAmount = scan.nextDouble();
 
+            // American to Japanese conversion rate
             double convRate = usdAmount * yen;
+
+            if (usdAmount == -1) {
+                System.out.print("Thanks for stopping by! 👋");
+                break;
+            }
 
             System.out.println("---------$--------");
             System.out.printf("🇺🇸American Dollar: $%.2f", usdAmount);
             System.out.printf("\n🇯🇵Japanese Yen Dollar: ¥%.2f", convRate);
             System.out.println("\n---------$--------");
-
-        } if (usdAmount == -1) {
-            System.out.print("Thanks for stopping by! 👋");
-            scan.close();
         }
+        scan.close();
     }
 }
