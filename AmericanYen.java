@@ -35,11 +35,11 @@ public class AmericanYen {
 
             System.out.println("---------$--------");
             System.out.printf("🇺🇸American Dollar: $%.2f", usdAmount);
-            System.out.println("\n🇯🇵Japanese Yen Dollar: ¥" + df.format(convRate));
-            System.out.println("---------$--------");
+            System.out.printf("\n🇯🇵Japanese Yen Dollar: ¥%.2f", convRate);
+            System.out.println("\n---------$--------");
 
         } if (usdAmount == -1) {
-            System.out.print("You've exited the program.");
+            System.out.print("Thanks for stopping by! 👋");
             scan.close();
         }
     }
